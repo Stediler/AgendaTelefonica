@@ -29,4 +29,8 @@ public class ContatoController {
         List<ContatoResponseDTO> contatoList = repository.findAll().stream().map(ContatoResponseDTO::new).toList();
         return contatoList;
     }
+    @DeleteMapping("/{id}")
+    public void deleteContato(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
 }
